@@ -1,0 +1,30 @@
+.flex-container {
+    background-color: grey;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+}
+
+.item {
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    margin: 10px;
+}
+
+.overlap{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: aqua;
+    z-index: 101;
+}
+
+@media (max-width: 700px) {
+    .item {
+        background-color: yellow;
+    }
+}

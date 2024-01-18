@@ -1,0 +1,93 @@
+body {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  }
+  
+  h1 {
+    text-align: center;
+    background-color: greenyellow;
+    border: 5px solid black;
+  }
+  
+  .flexContainer {
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  .line-a {
+    width: 50%;
+    height: 50%;
+    background-color: lightcyan;
+    margin: 10px;
+    flex-grow: 0;
+    border: 1px solid salmon;
+  }
+  
+  .line-b {
+    width: 50%;
+    height: 50%;
+    background-color: purple;
+    margin: 10px;
+    align-self: flex-end;
+    flex-grow: 0;
+  }
+  
+  .overlay {
+    border: 10px dotted black;
+    text-align: center;
+    z-index: 100;
+    min-height: 100px;
+    min-width: 100px;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .flexContainer {
+      flex-direction: column;
+    }
+    
+    .line-a, .line-b {
+      width: 100%;
+    }
+    
+    .overlay {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .flexContainer {
+      flex-direction: row;
+    }
+    
+    .line-a, .line-b {
+      width: 50%;
+    }
+    
+    .overlay {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    .flexContainer {
+      flex-direction: row;
+    }
+    
+    .line-a, .line-b {
+      width: 25%;
+    }
+    
+    .overlay {
+      width: 40%;
+      margin: 0 auto;
+    }
+  }
