@@ -1,0 +1,80 @@
+/* header has blue font and underlined */
+header{
+    color: navy;
+    width: underlinded;
+    text-align: center;
+}
+
+/* body behaviour */
+body{
+    background-color: bisque;
+}
+
+/* link color behaviour */
+a {
+    color:rgb(32, 162, 36);
+    background-color: black;
+
+}
+
+/* paragraphs behaviour */
+p {
+    text-wrap: wrap;
+}
+
+/* intro zoo image formating */
+.zoo-main{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* animal images have a green dotted border */
+.animals{
+    width: 30%;
+    border: 10px green dotted;
+}
+
+/* intro has monospace font  */
+#intro{
+    font-size: large;
+    font-family: monospace;
+    margin: 20px;
+}
+
+/* panda has cursive font */
+#panda-font{
+    font-size: large;
+    font-family: cursive;
+    margin: 20px;
+}
+/* lion is off uniformed margin */
+#lion-font{
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 100px;
+    border: 20px orange dashed;
+}
+
+/* tiger has a unique backrgound color  */
+#tiger-font{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: slategray;
+}
+
+/* seal has a Herculanum font  */
+#seal-font{
+    font-size: large;
+    font-family: Herculanum;
+    margin: 20px;
+}
+
+/* rabbit has a Comic Sans font  */
+#rabbit-font{
+    font-size: small;
+    font-family: Comic Sans MS;
+    margin: 20px;
+}

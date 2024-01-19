@@ -1,0 +1,25 @@
+section{
+    background-color: lightgrey;
+    border: 1px solid black;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.category{
+    background-color: coral;
+    display: inline-block;
+}
+
+#dessert-section{
+    background-color: rgb(205, 186, 239);
+    display: inline-block;
+}
+
+#frozen-img{
+    width: 300px;
+}
+
+.frozen-subsection{
+    display: inline-block;
+}

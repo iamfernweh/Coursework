@@ -1,0 +1,15 @@
+header{
+    background-color: skyblue;
+}
+
+section{
+    border: 2px midnightblue solid;
+}
+
+#food-list{
+    border: 3px orange dashed;
+}
+
+.food-img{
+    border: 20px pink dashed;
+}

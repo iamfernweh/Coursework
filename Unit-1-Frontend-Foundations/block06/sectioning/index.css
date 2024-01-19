@@ -1,0 +1,25 @@
+h1{
+    color: blue;
+}
+
+.classname{
+    color: green;
+}
+
+#id{
+    color: purple;
+}
+
+/* combinator */
+/* direct child */
+section > p {
+    color: brown;
+}
+
+section > .para-class {
+    text-decoration: underline;
+}
+
+.red-list > li {
+    color: purple
+}

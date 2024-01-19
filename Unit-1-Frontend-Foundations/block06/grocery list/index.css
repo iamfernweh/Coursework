@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: auto;
+    padding: auto;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    color: green;
+    background-color: skyblue;
+}
+
+.pantry {
+    background-color: #2196F3;
+    border: 2px solid #1565C0;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.canned {
+    background-color: lightgreen;
+    border: 2px solid #1565C0;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.dry {
+    background-color: red;
+    border: 2px solid #1565C0;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.freezer {
+    background-color: #2196F3;
+    border: 2px solid #1565C0;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.veggies-food {
+    background-color: #3c9022;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.snacks-food {
+    background-color: #4e49e2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 45%;
+    box-sizing: border-box;
+    float: left;
+}
+
+
+img {
+    max-width: 45%;
+    height: auto;
+    margin-top: 15px;
+    padding: 20px;
+}
