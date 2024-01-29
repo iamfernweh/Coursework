@@ -31,7 +31,7 @@ console.log(totalCost);
 //add the values of the dinner object to calculate 
 //the total cost of the meal. 
 
-function calculateCost(me) {
+function calculateCost(meal) {
     let total = 0;
     for (let food in meal){
         total += meal[food];
