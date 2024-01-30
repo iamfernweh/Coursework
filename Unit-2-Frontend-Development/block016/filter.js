@@ -28,7 +28,7 @@ const giftRegistry = [
     {item: 'radio', price: 5}
 ]
 
-const minPrice = 10;
+const minPrice = 1;
 const maxPrice = 100;
 
 const callbackForFindFn = (singleGift) => {
@@ -37,4 +37,7 @@ const callbackForFindFn = (singleGift) => {
 
 const giftToBuy = giftRegistry.find(callbackForFindFn)
 
-console.log(giftToBuy);
+// console.log(giftToBuy);
+
+const affordableGiftOptions = giftRegistry.filter(callbackForFindFn)
+console.log(affordableGiftOptions);
