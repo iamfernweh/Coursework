@@ -26,6 +26,9 @@ const songs = [
 const formContainer = document.getElementById('addSongForm')
 const allSongs = document.getElementById('allSongsTextArea')
 const allSongsContainer = document.getElementById('allSongsContainer')
+const decadeSelect = document.getElementById('decadeSelect')
+const filteredSongsTextArea = document.getElementById('filteredSongsTextArea')
+
 
 function updateAllSongs() {
     //display the details of each song object from array into 'allSongs' text area
@@ -33,6 +36,23 @@ function updateAllSongs() {
     const songStrings = songs.map((song) => `${song.name} by ${song.artist} from ${song.year}` );
     //set the value of 'allSongs'
     allSongs.value = songStrings.join('\n')
+}
+
+function updateFilteredSong(filteredSongs) {
+    const songStrings = filteredSongs.map((song) => `${song.name} by ${song.artist} from ${song.year}` );
+    filteredSongsTextArea.value = songStrings.join('\n')
+}
+
+function songExists(songName, artistName, releaseYear){
+    //loop through songs array until find a match or add it to the array
+    let matchFound = false
+    let i = 0
+    while (!matchFound && i < songs.length){
+        const curSong = songs[i];
+        matchFound = curSong.name === songName && curSong.artist === artistName;
+        i++;
+    }
+    return matchFound
 }
 
 // render function to display elements on the page
@@ -47,6 +67,15 @@ function render() {
         updateAllSongs()
     })
     allSongsContainer.append(sortButton)
+
+//filter on decade
+    decadeSelect.addEventListener('change', (event) => {
+        //get current value of decades
+        const selectedDecade = +decadeSelect.value
+        //user array.filter()
+        const filteredSongs = songs.filter((song) => song.year >= selectedDecade && song.year <= selectedDecade+9)
+        updateFilteredSong(filteredSongs) //(similar to updateAllSongs)
+    })
 
     //create a form (parent)
     const form = document.createElement('form')
@@ -85,6 +114,9 @@ function render() {
         const releaseYear = releaseYearInput.value
         console.log(songName, artistName, releaseYear);
         //build song object
+        if(songExists(songName, artistName)){
+            console.log('Song exists!');
+        } else {
         const songObj = {
             name: songName,
             artist: artistName,
@@ -93,6 +125,9 @@ function render() {
         //put object in 'songs' array
         songs.push(songObj);
         updateAllSongs();
+    }
+    form.reset()
+
     })
 
 
