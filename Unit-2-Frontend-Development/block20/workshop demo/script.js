@@ -4,20 +4,49 @@ const songs = [
         name: 'Wannabe',
         artist: 'Spice Girls',
         year: 1996
+    },
+    {
+        name: 'You Know My Name',
+        artist: 'Chris Cornell',
+        year: 2006
+    },
+    {
+        name: 'Tokyo Girl',
+        artist: 'Ace of Base',
+        year: 1998
+    },
+    {
+        name: 'In the end',
+        artist: 'Linkin Park',
+        year: 2000
     }
 ]
 
 // get our existing form container by id
 const formContainer = document.getElementById('addSongForm')
 const allSongs = document.getElementById('allSongsTextArea')
+const allSongsContainer = document.getElementById('allSongsContainer')
 
-// render function to display elements on the page
-function render() {
+function updateAllSongs() {
     //display the details of each song object from array into 'allSongs' text area
     //map over each element in the song array and turn into a string
     const songStrings = songs.map((song) => `${song.name} by ${song.artist} from ${song.year}` );
     //set the value of 'allSongs'
-    
+    allSongs.value = songStrings.join('\n')
+}
+
+// render function to display elements on the page
+function render() {
+    updateAllSongs()
+
+    const sortButton = document.createElement('button')
+    sortButton.textContent = 'Sort button'
+    sortButton.addEventListener('click', (event) => {
+        //calling built-in sort
+        songs.sort((a,b) => a.name.localeCompare(b.name) )
+        updateAllSongs
+    })
+    allSongsContainer.append(sortButton)
 
     //create a form (parent)
     const form = document.createElement('form')
@@ -59,11 +88,11 @@ function render() {
         const songObj = {
             name: songName,
             artist: artistName,
-            year: releaseYear,
+            year: +releaseYear,
         }
         //put object in 'songs' array
         songs.push(songObj);
-        console.table(songs);
+        updateAllSongs();
     })
 
 
