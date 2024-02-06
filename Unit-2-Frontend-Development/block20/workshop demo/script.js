@@ -1,11 +1,24 @@
 // create an array to hold data (songs)
-const songs = []
+const songs = [
+    {
+        name: 'Wannabe',
+        artist: 'Spice Girls',
+        year: 1996
+    }
+]
 
 // get our existing form container by id
 const formContainer = document.getElementById('addSongForm')
+const allSongs = document.getElementById('allSongsTextArea')
 
 // render function to display elements on the page
 function render() {
+    //display the details of each song object from array into 'allSongs' text area
+    //map over each element in the song array and turn into a string
+    const songStrings = songs.map((song) => `${song.name} by ${song.artist} from ${song.year}` );
+    //set the value of 'allSongs'
+    
+
     //create a form (parent)
     const form = document.createElement('form')
 
@@ -33,6 +46,26 @@ function render() {
     // submit button
     const submitButton = document.createElement('button')
     submitButton.textContent = 'Submit'
+
+    //event listener
+    form.addEventListener('submit', (submitEvent) => {
+        submitEvent.preventDefault()
+        //get values from text inputs
+        const songName = songInput.value
+        const artistName = artistInput.value
+        const releaseYear = releaseYearInput.value
+        console.log(songName, artistName, releaseYear);
+        //build song object
+        const songObj = {
+            name: songName,
+            artist: artistName,
+            year: releaseYear,
+        }
+        //put object in 'songs' array
+        songs.push(songObj);
+        console.table(songs);
+    })
+
 
     //add into the form (appendChild())
     // parent.appendChild(child)
