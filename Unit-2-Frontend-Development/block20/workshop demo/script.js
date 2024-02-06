@@ -44,7 +44,7 @@ function render() {
     sortButton.addEventListener('click', (event) => {
         //calling built-in sort
         songs.sort((a,b) => a.name.localeCompare(b.name) )
-        updateAllSongs
+        updateAllSongs()
     })
     allSongsContainer.append(sortButton)
 
