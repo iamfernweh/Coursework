@@ -16,7 +16,7 @@ const songs = [
         year: 1998
     },
     {
-        name: 'In the end',
+        name: 'In the End',
         artist: 'Linkin Park',
         year: 2000
     }
