@@ -12,7 +12,7 @@ function render() {
     //add inputs, labels, and submit button (children)
     const songLabel = document.createElement('label')
     songLabel.for = 'song-input'
-    // the value of the 'for' atribute must be a single id for the corresponding form element
+    // the value of the 'for' attribute must be a single id for the corresponding form element
     songLabel.textContent = 'Song name: '
     const songInput = document.createElement('input')
     songInput.id = 'song-input'
