@@ -1,11 +1,12 @@
-export default function Item({name, price}) {
+export default function Item({name, price, addToCart}) {
     return (
         // name, price
         <>
             <h3>{name}</h3>
             <p>${price}</p>
-            <button>Add to cart</button>
+            <button onClick={() => {
+                addToCart(name, price)
+            }}>Add to cart</button>
         </>
     )
 }
-
