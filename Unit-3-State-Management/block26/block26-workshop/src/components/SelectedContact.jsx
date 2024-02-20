@@ -1,28 +1,39 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
-export default function SelectedContact({ selectedContactId }) {
-    const [singleContact, setSingleContact] = useState(null);
+function SelectedContact({selectedContactId, setSelectedContactId}){
+  const [singleContact, setSingleContact] = useState(null)
 
+  useEffect(() => {
+    // define our async function for getting a single contact by ID
+    async function fetchContact(){
+      try{
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${selectedContactId}`)
+        const result = await response.json()
+        setSingleContact(result)
+        console.log(result)
+      } catch(error){
+        console.log(error)
+      }
+    }
+    // call that function
+    fetchContact()
+    // use the results to display some contact data
+  }, [selectedContactId])
 
-    useEffect(() => {
-        async function fetchContact() {
-            try{
-                const response = await fetch(`https://jsonplaceholder.typicode.com/users/${selectedContactId}`);
-                const result = await response.json();
-                console.log(result);
-            
-        } catch (error) {
-            console.log(error);
-        }}
-        fetchContact();
-    }, [selectedContactId]);
-
-
-    return (
-        <>
-            {selectedContactId === null
-                ? <div>No contact selected</div>
-                : <div>{selectedContactId}</div>}
-        </>
-    );
+  return(
+    <>
+      {singleContact === null
+        ? <div>Loading . . .</div>
+        : <div>
+            <p>{singleContact.name}</p>
+            <p>{singleContact.email}</p>
+            <p>{singleContact.phone}</p>
+            <p>{singleContact.website}</p>
+            <button onClick={() => setSelectedContactId(null)}>Back to List</button>
+          </div>
+        }
+    </>
+  )
 }
+
+export default SelectedContact
