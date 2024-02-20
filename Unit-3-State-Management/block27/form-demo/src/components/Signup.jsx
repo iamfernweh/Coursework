@@ -22,8 +22,6 @@ function SignUp({saveToken}) {
       const result = await response.json();
       saveToken(result.token)
       console.log(result)
-      // submit POST to
-      // https://fsa-jwt-practice.herokuapp.com/signup
     } catch(err){
       console.log(err)
     }
