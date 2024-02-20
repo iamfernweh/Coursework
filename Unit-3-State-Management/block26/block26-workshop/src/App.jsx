@@ -8,7 +8,7 @@ function App() {
     <>
       <ContactList />
     </>
-  )
+  );
 }
 
 export default App
