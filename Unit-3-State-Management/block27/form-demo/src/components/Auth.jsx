@@ -27,7 +27,7 @@ function Auth({token}) {
     {/* button to authenticate a request with the token */}
     <button onClick={attemptAuth}>Authenticate!</button>
     {/* message: successful or not? */}
-    {success ? <div>Successfully Authenticated!</div> : <div>Unsuccessful :(</div>}
+    {success ? <div>Successfully Authenticated!</div> : <div>Unsuccessful</div>}
     </>
   )
 }
