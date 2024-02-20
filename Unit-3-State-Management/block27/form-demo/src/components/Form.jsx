@@ -4,6 +4,10 @@ function Form() {
         e.preventDefault();
         const form = e.target
         const formData = new FormData(form);
+        const formJson = Object.fromEntries(formData.entries())
+        console.log(formJson)
+        //then we could use that formJson to submit to an API using fetch
+        //fetch('/some-api', {method: 'post', body: formJson})
     }
     
     
