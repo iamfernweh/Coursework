@@ -4,7 +4,6 @@ function SelectedContact({selectedContactId, setSelectedContactId}){
   const [singleContact, setSingleContact] = useState(null)
 
   useEffect(() => {
-    // define our async function for getting a single contact by ID
     async function fetchContact(){
       try{
         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${selectedContactId}`)
@@ -15,9 +14,7 @@ function SelectedContact({selectedContactId, setSelectedContactId}){
         console.log(error)
       }
     }
-    // call that function
     fetchContact()
-    // use the results to display some contact data
   }, [selectedContactId])
 
   return(
