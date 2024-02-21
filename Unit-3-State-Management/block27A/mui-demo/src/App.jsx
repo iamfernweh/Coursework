@@ -1,5 +1,6 @@
-import './App.css'
+import './App.css';
 import BasicButton from './components/BasicButton';
+import Login from './components/Login';
 import MyCheckBox from './components/MyCheckBox';
 
 function App() {
@@ -9,8 +10,9 @@ function App() {
       <h2>Guided Practice</h2>
       <BasicButton />
       <MyCheckBox />
+      <Login />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
