@@ -1,0 +1,25 @@
+.h1 {
+  color: green;
+}
+
+.nav {
+  color: blue;
+  font-size: 30px;
+}
+.nav li {
+  list-style-type: square;
+}
+
+.button {
+  background-color: orangered;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.button:active {
+  background-color: orangered;
+  color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
