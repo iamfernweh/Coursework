@@ -3,13 +3,20 @@ import { useGetPostsQuery } from "../api/postsApi";
 function Posts() {
 
     const { data, isLoading } = useGetPostsQuery();
-    console.log(data);
+    console.log(data?.data);
+    console.log(isLoading);
+
+    const posts = data?.data?.posts;
 
     return (
         <>
-            Post Component
             {isLoading && <p>Loading data...</p>}
-            {!isLoading && <p>Data loaded!</p>}
+            {!isLoading && posts.map((posts) =>
+                <div key={posts._id}>
+                    <h2>{posts.title}</h2>
+                    <p>{posts.description}</p>
+                </div>
+            )}
         </>
     );
 }
