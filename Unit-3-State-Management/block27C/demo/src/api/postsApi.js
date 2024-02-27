@@ -4,7 +4,6 @@ export const postsApi = createApi({
   reducerPath: 'postsApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://strangers-things.herokuapp.com/api/2401-GHP-ET-WEB-FT-SF',
-    //also need some headers
   }),
   endpoints: (builder) => ({
     getPosts: builder.query({
