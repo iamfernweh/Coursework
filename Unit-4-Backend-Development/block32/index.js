@@ -59,7 +59,7 @@ const init = async () => {
             id SERIAL PRIMARY KEY,
             created_at TIMESTAMP DEFAULT now(),
             updated_at TIMESTAMP DEFAULT now(),
-            ranking DEFAULT INTEGER 3 NOT NULL,
+            ranking INTEGER DEFAULT 3 NOT NULL,
             txt VARCHAR(255) NOT NULL
         );
   `;
@@ -72,7 +72,7 @@ const init = async () => {
   `;
   await client.query(SQL);
   console.log('data seeded');
-  const port = process.env.PORT || 3000; //set port
+  const port = process.env.PORT || 3001; //set port
   app.listen(port, () => console.log(`listening to port ${port}`)); //listen
 };
 
