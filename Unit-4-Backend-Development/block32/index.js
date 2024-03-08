@@ -49,6 +49,7 @@ app.delete('/api/notes/:id', async (req, res, next) => {
   }
 });
 
+// create and run the EXPRESS app
 const init = async () => {
   await client.connect();
   console.log('connected to database');
