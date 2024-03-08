@@ -13,11 +13,11 @@ app.use(require('morgan')('dev'));
 app.post('/api/notes', async (req, res, next) => {
   try {
     const SQL = `
-        INSERT INTO notes(txt)
-        VALUES($1)
+        INSERT INTO notes(txt, ranking)
+        VALUES($1, $2)
         RETURNING *
       `;
-    const response = await client.query(SQL, [req.body.txt]);
+    const response = await client.query(SQL, [req.body.txt, req.body.ranking]);
     res.send(response.rows[0]);
   } catch (er) {
     next(er);
@@ -43,7 +43,8 @@ app.put('/api/notes/:id', async (req, res, next) => {
     const SQL = `
     UPDATE notes
       SET txt=$1, ranking=$2, updated_at= now()
-      WHERE id=$3 RETURNING *
+      WHERE id=$3 
+      RETURNING *
       `;
     const response = await client.query(SQL, [
       req.body.txt,
