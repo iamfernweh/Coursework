@@ -40,7 +40,7 @@ app.post('/api/notes', async (req, res, next) => {
   }
 });
 
-app.put('/api/notes/:id', async (req, res, nest) => {
+app.put('/api/notes/:id', async (req, res, next) => {
   try {
     const SQL = `
        UPDATE notes
@@ -63,7 +63,7 @@ app.put('/api/notes/:id', async (req, res, nest) => {
   }
 });
 
-app.get('/api/notes', async (req, res, nest) => {
+app.get('/api/notes', async (req, res, next) => {
   try {
     const SQL = `
         SELECT *
@@ -76,7 +76,7 @@ app.get('/api/notes', async (req, res, nest) => {
   }
 });
 
-app.get('/api/categories', async (req, res, nest) => {
+app.get('/api/categories', async (req, res, next) => {
   try {
     const SQL = `
         SELECT *
