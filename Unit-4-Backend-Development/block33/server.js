@@ -1,12 +1,29 @@
 const pg = require('pg');
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 
 const client = new pg.Client(
   process.env.DATABASE_URL || 'postgres://localhost/acme_notes_categories_db'
 );
 
+app.use(morgan('dev'));
+console.log(morgan('dev'));
+
 app.get('/api/notes', async (req, res, nest) => {
+  try {
+    const SQL = `
+        SELECT *
+        FROM notes;
+      `;
+    const response = await client.query(SQL);
+    res.send(response.rows);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
+app.get('/api/categories', async (req, res, nest) => {
   try {
     const SQL = `
         SELECT *
@@ -56,6 +73,7 @@ const init = async () => {
     console.log(`listening on port ${port}`);
     console.log('curl command to test application');
     console.log(`curl localhost:${port}/api/notes`);
+    console.log(`curl localhost:${port}/api/categories`);
   });
 };
 
