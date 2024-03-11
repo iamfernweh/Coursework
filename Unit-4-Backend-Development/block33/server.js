@@ -38,6 +38,10 @@ const init = async () => {
   `;
   await client.query(SQL);
   console.log('data seeded');
+  const port = process.env.PORT || 3001;
+  app.listen(port, () => {
+    console.log(`listning on port ${port}`);
+  });
 };
 
 init();
