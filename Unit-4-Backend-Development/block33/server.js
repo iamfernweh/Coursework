@@ -6,6 +6,19 @@ const client = new pg.Client(
   process.env.DATABASE_URL || 'postgres://localhost/acme_notes_categories_db'
 );
 
+app.get('/api/notes', async (req, res, nest) => {
+  try {
+    const SQL = `
+        SELECT *
+        FROM notes;
+      `;
+    const response = await client.query(SQL);
+    res.send(response.rows);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 const init = async () => {
   console.log('connecting to database');
   await client.connect();
@@ -40,7 +53,9 @@ const init = async () => {
   console.log('data seeded');
   const port = process.env.PORT || 3001;
   app.listen(port, () => {
-    console.log(`listning on port ${port}`);
+    console.log(`listening on port ${port}`);
+    console.log('curl command to test application');
+    console.log(`curl localhost:${port}/api/notes`);
   });
 };
 
