@@ -80,7 +80,7 @@ app.get('/api/categories', async (req, res, next) => {
   try {
     const SQL = `
         SELECT *
-        FROM notes;
+        FROM categories;
       `;
     const response = await client.query(SQL);
     res.send(response.rows);
